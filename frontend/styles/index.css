@@ -1,0 +1,33 @@
+body {
+  font-family: system-ui, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.container {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.question {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.question-text {
+  margin: 0;
+}
