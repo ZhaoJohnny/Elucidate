@@ -1,6 +1,4 @@
-# Conceptual Learning Assistant
-
-An AI-powered learning assistant that helps students understand *why* a problem works, not just how to solve it.
+# Elucidate Learning Assistant
 
 ## Structure
 - `frontend/`  Sample-question website (React + TypeScript + Vite)
