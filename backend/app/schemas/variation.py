@@ -53,3 +53,17 @@ class VariationsResponse(StrictModel):
     """Response body for the variations endpoint: the generated questions."""
 
     variations: list[Variation]
+
+class VariationDraft(StrictModel):
+    """A variation as produced by the AI, before the backend assigns an id."""
+
+    category: VariationCategory
+    question: str = Field(min_length=1)
+    modified_conditions: list[str]
+    learning_objective: str = Field(min_length=1)
+
+
+class VariationDrafts(StrictModel):
+    """Tool-output wrapper: the AI returns all variations in one object."""
+
+    variations: list[VariationDraft]

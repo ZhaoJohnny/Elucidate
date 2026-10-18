@@ -8,3 +8,10 @@ dependencies = [
   "pydantic>=2",
   "python-dotenv",
 ]
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic>=2",
+  "python-dotenv",
+  "google-genai",
+]
