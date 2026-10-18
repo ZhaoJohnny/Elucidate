@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-app = FastAPI(title="Conceptual Learning Assistant API")
+app = FastAPI(title="Elucidate")
 
 
 @app.get("/health")
