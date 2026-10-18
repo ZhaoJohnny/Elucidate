@@ -1,33 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap");
+
+:root {
+  --frost: #cbddf1;
+  --glacier: #9bc1e0;
+  --lagoon: #4a93a2;
+  --cobalt: #3f78a8;
+  --deep: #26425a;
+  --mist: #eef4fa;
+  --muted: #55718a;
+  --sans: "Hanken Grotesk", system-ui, sans-serif;
+  --serif: "Newsreader", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
 body {
-  font-family: system-ui, sans-serif;
-  color: #1a1a1a;
-  line-height: 1.6;
   margin: 0;
+  background: var(--frost);
+  color: var(--deep);
+  font-family: var(--serif);
 }
 
-.container {
-  max-width: 720px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+.desk { padding: 2.5rem 1rem 4rem; }
+
+.sheet {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 3.25rem 2.25rem;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(38, 66, 90, 0.15), 0 12px 32px rgba(38, 66, 90, 0.14);
 }
 
-h1 {
-  font-size: 1.5rem;
+.sheet ::selection { background: var(--glacier); }
+
+/* Header */
+.sheet-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 2px solid var(--deep);
+}
+.dept { margin: 0 0 0.35rem; font: 500 0.85rem var(--sans); color: var(--muted); }
+.sheet-head h1 { margin: 0; font: 700 1.55rem/1.2 var(--sans); letter-spacing: -0.01em; }
+.set-title { margin: 0.4rem 0 0; font: 500 1.1rem var(--serif); }
+
+.score-box {
+  flex: none;
+  padding: 0.5rem 0.9rem 0.6rem;
+  border: 1.5px solid var(--deep);
+  font-family: var(--sans);
+}
+.score-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--muted); }
+.score-row { display: flex; align-items: flex-end; gap: 0.4rem; margin-top: 0.9rem; font-weight: 600; }
+.score-line { width: 3rem; border-bottom: 1px solid var(--deep); height: 1rem; }
+
+/* Name / ID / Section */
+.fields { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1.25rem; margin-top: 1.25rem; }
+.field { display: flex; align-items: flex-end; gap: 0.5rem; font: 500 0.9rem var(--sans); }
+.field .line { flex: 1; height: 1.1rem; border-bottom: 1px solid var(--deep); }
+
+.due { margin: 1.1rem 0 0; font: 500 0.9rem var(--sans); color: var(--muted); }
+
+/* Instructions */
+.instructions {
+  margin: 1.5rem 0 2rem;
+  padding: 0.9rem 1.1rem 1rem;
+  background: var(--mist);
+  border-left: 4px solid var(--cobalt);
+  font-size: 1rem;
+}
+.instructions h2 { margin: 0 0 0.4rem; font: 600 0.95rem var(--sans); }
+.instructions ul { margin: 0; padding-left: 1.1rem; }
+.instructions li + li { margin-top: 0.2rem; }
+
+/* Problems */
+.problem { padding: 1.4rem 0 1.25rem; border-top: 1px solid var(--glacier); }
+.problem:first-child { padding-top: 0; border-top: 0; }
+
+.problem-head { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.6rem; }
+.problem-head h2 { margin: 0; font: 700 1.05rem var(--sans); }
+.problem-title { font: 500 0.95rem var(--sans); color: var(--muted); }
+.points { margin-left: auto; font: 500 0.85rem var(--sans); color: var(--muted); white-space: nowrap; }
+
+.question-text { margin: 0 0 1rem; font-size: 1.2rem; line-height: 1.7; }
+
+/* Ruled work space */
+.work {
+  height: calc(var(--lines) * 2rem);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(2rem - 1px),
+    var(--frost) calc(2rem - 1px),
+    var(--frost) 2rem
+  );
 }
 
-.question {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
-  margin: 1.25rem 0;
+.sheet-foot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--deep);
+  font: 500 0.8rem var(--sans);
+  color: var(--muted);
 }
 
-.meta {
-  font-size: 0.8rem;
-  color: #666;
-  margin-bottom: 0.5rem;
+@media (max-width: 600px) {
+  .sheet { padding: 1.75rem 1.25rem 1.5rem; }
+  .sheet-head { flex-direction: column; }
+  .fields { grid-template-columns: 1fr; }
 }
 
-.question-text {
-  margin: 0;
+@media print {
+  body { background: #fff; }
+  .desk { padding: 0; }
+  .sheet { max-width: none; padding: 0; box-shadow: none; }
 }
