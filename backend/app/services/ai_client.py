@@ -8,6 +8,7 @@ import httpx
 from google import genai
 from google.genai import errors, types
 from pydantic import BaseModel, ValidationError
+import json
 
 from app.config import settings
 
@@ -52,9 +53,12 @@ def generate_structured(
     """
     client = _get_client()
     config = types.GenerateContentConfig(
-        system_instruction=system,
+        system_instruction=(
+            system
+            + "\n\nRespond with JSON that matches this JSON Schema exactly:\n"
+            + json.dumps(schema.model_json_schema())
+        ),
         response_mime_type="application/json",
-        response_schema=schema,
         max_output_tokens=settings.max_tokens,
         temperature=0.4,
     )
