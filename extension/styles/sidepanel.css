@@ -1,0 +1,24 @@
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  color: #1a1a1a;
+}
+main { padding: 12px; }
+h1 { font-size: 1.3rem; margin: 0 0 12px; }
+h3 { margin: 0 0 8px; }
+h4 { margin: 12px 0 4px; }
+section { margin-bottom: 20px; }
+button { cursor: pointer; margin: 4px 4px 4px 0; padding: 4px 10px; }
+button:disabled { cursor: not-allowed; opacity: 0.5; }
+blockquote { margin: 8px 0; padding: 8px 12px; background: #f3f3f3; border-left: 3px solid #999; }
+.hint { color: #666; font-size: 12px; margin: 4px 0; }
+.status { color: #555; font-style: italic; }
+.error { color: #b00020; }
+.check { display: block; margin: 2px 0; }
+.picker { list-style: none; padding: 0; }
+.picker button { display: block; width: 100%; text-align: left; }
+.variation { border: 1px solid #ddd; border-radius: 6px; padding: 8px 12px; margin-top: 10px; }
+.tag { font-size: 11px; text-transform: uppercase; color: #666; }
+.answer { background: #eef7ee; padding: 6px 10px; border-radius: 4px; }

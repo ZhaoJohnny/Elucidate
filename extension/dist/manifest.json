@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Elucidate",
+  "version": "0.1.0",
+  "description": "Understand why a problem works, not just how to solve it.",
+  "permissions": ["sidePanel"],
+  "host_permissions": ["http://localhost:8000/*"],
+  "action": { "default_title": "Open Elucidate" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:5173/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
